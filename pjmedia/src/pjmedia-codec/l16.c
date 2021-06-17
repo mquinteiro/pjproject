@@ -1,4 +1,4 @@
-/* $Id$ */
+/* $Id: l16.c 5153 2015-08-07 09:22:32Z ming $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -291,7 +291,7 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
     unsigned count = 0;
 
     PJ_UNUSED_ARG(factory);
-
+#if 0
     if (count < *max_count) {
 	/* Register 44100Hz 1 channel L16 codec */
 	codecs[count].type = PJMEDIA_TYPE_AUDIO;
@@ -331,7 +331,7 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
 	codecs[count].channel_cnt = 2;
 	++count;
     }
-
+#endif
 // disable some L16 modes
 #if 0
     if (count < *max_count) {
@@ -354,7 +354,8 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
 	++count;
     }
 #endif
-
+//Navantia 2021/06/16
+#if 0
     if (count < *max_count) {
 	/* 16000 Hz mono */
 	codecs[count].type = PJMEDIA_TYPE_AUDIO;
@@ -375,7 +376,7 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
 	codecs[count].channel_cnt = 2;
 	++count;
     }
-
+#endif
 // disable some L16 modes
 #if 0
     if (count < *max_count) {
@@ -418,7 +419,9 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
 	codecs[count].channel_cnt = 2;
 	++count;
     }
+#endif
 
+#if 1
     if (count < *max_count) {
 	/* 48KHz mono */
 	codecs[count].type = PJMEDIA_TYPE_AUDIO;
@@ -428,7 +431,9 @@ static pj_status_t l16_enum_codecs( pjmedia_codec_factory *factory,
 	codecs[count].channel_cnt = 1;
 	++count;
     }
+#endif
 
+#if 0
     if (count < *max_count) {
 	/* 48KHz stereo */
 	codecs[count].type = PJMEDIA_TYPE_AUDIO;
